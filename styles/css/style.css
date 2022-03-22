@@ -1,0 +1,34 @@
+body {
+  background: #000;
+  color: #fff;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+body #app {
+  height: 50vh;
+}
+body table,
+body tr,
+body td,
+body th {
+  border: 1px solid #fff;
+}
+body table {
+  width: 100%;
+  text-align: center;
+}
+body #inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+body #outputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+body #outputs label {
+  text-align: right;
+}
+body #outputs table {
+  grid-column: span 2;
+}
