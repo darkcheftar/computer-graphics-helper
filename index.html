@@ -1,92 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Graphics | Calculation Helper</title>
-    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="./styles/css/style.css">
-</head>
-<body>
-    <section id="app">
-        <h1>Digital Differential Algorithm</h1>
-        <div id="inputs">
-            <Label for="x1">x1</Label><input v-model="x1" id="x1" name="x1" type="number"/>
-            <Label for="y1">y1</Label><input v-model="y1" id="y1" name="y1" type="number"/>
-            <Label for="x2">x2</Label><input v-model="x2" id="x2" name="x2" type="number"/>
-            <Label for="y2">y2</Label><input v-model="y2" id="y2" name="y2" type="number"/>
-        </div>
-        <div id="outputs">
-            <Label for="dx">dx:</Label><span>{{dx}}</span>
-            <Label for="dy">dy:</Label><span>{{dy}}</span>
-            <Label for="m">m:</Label><span>{{m}}</span>
-            <Table>
-                <Thead>
-                    <th>sno</th>
-                    <th>x</th>
-                    <th>y</th>
-                </Thead>
-                <tbody v-for="([x,y],index) in data">
-                    <tr>
-                        <td>{{index}}</td>
-                        <td>{{Math.floor(x)}}</td>
-                        <td>{{Math.floor(y)}}</td>
-                    </tr>
-                </tbody>
-            </Table>
-        </div>
-    </section>
-    <script>
-    let x1,y1,x2,y2;
-    function calculate(){
-
-    }
-    Vue.createApp({
-        data() {
-        return {
-            message: 'Hello Vue!',
-            x1:0 ,
-            y1:0,
-            x2:10,
-            y2:11
-        }
-    },
-        computed:{
-                dx(){
-                    return this.x2-this.x1
-                },
-                dy(){
-                    return this.y2-this.y1
-                },
-                m(){
-                    return this.dy/this.dx
-                },
-                data(){
-                    let {abs} = Math;
-                    console.log(this.dx);
-                    let a = []
-                    let {dx,dy,x1,y1} = this;
-
-                    if (abs(dx) >= abs(dy))
-                            step = abs(dx);
-                        else
-                            step = abs(dy);
-                        dx = dx / step;
-                        dy = dy / step;
-                        x = x1;
-                        y = y1;
-                        i = 1;
-                        while (i <= step) {
-                            a.push([x, y]);
-                            x = x + dx;
-                            y = y + dy;
-                            i = i + 1;
-                        }
-                    return a;
-                }
-            }
-  }).mount('#app')
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
